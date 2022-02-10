@@ -1,4 +1,4 @@
-FROM rust:1.54.0-slim-bullseye AS base
+FROM rust:1.58.1-slim-bullseye AS base
 
 RUN apt-get update --allow-insecure-repositories; \
     apt-get install -y \

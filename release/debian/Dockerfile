@@ -7,6 +7,7 @@ FROM rossmurr4y/mdbook-plantuml-bin as mdbook-plantuml-bin
 FROM rossmurr4y/mdbook-open-on-gh-bin as mdbook-open-on-gh-bin
 FROM rossmurr4y/mdbook-graphviz-bin as mdbook-graphviz-bin
 FROM rossmurr4y/mdbook-katex-bin as mdbook-katex-bin
+FROM rossmurr4y/mdbook-docx:latest as mdbook-docx-bin
 
 FROM debian:bullseye-slim as mdbook-pdf
 
@@ -19,6 +20,7 @@ COPY --from=mdbook-plantuml-bin /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-open-on-gh-bin /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-graphviz-bin /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-katex-bin /usr/local/cargo/bin/mdbook* /usr/bin/
+COPY --from=mdbook-docx-bin /usr/local/cargo/bin/mdbook-docx /usr/bin/
 
 RUN apt-get update --allow-insecure-repositories; \
     apt-get install --no-install-recommends -y \
