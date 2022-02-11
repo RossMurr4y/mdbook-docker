@@ -20,7 +20,7 @@ COPY --from=mdbook-plantuml-bin /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-open-on-gh-bin /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-graphviz-bin /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-katex-bin /usr/local/cargo/bin/mdbook* /usr/bin/
-COPY --from=mdbook-docx-bin /usr/local/cargo/bin/mdbook-docx /usr/bin/
+COPY --from=mdbook-docx-bin /usr/bin/mdbook-docx /usr/bin/
 
 RUN apt-get update --allow-insecure-repositories; \
     apt-get install --no-install-recommends -y \

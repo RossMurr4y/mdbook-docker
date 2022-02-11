@@ -1,8 +1,8 @@
-mdbook=0.4.7
-mdbook-linkcheck=0.7.4
-mdbook-mermaid=0.8.0
-mdbook-toc=0.6.1
+mdbook=0.4.15
+mdbook-linkcheck=0.7.6
+mdbook-mermaid=0.10.0
+mdbook-toc=0.8.0
 mdbook-plantuml=0.7.0
-mdbook-open-on-gh=2.0.0
-mdbook-graphviz=0.0.2
-mdbook-katex=0.2.8
+mdbook-open-on-gh=2.0.2
+mdbook-graphviz=0.1.3
+mdbook-katex=0.2.10

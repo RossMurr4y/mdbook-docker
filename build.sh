@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # builder base image
-#docker buildx build \
-#  --platform linux/amd64,linux/arm64/v8 \
-#  --tag rossmurr4y/rust-builder-base:latest \
-#  --file base/debian/Dockerfile \
-#  --push .
+docker buildx build \
+  --platform linux/amd64,linux/arm64/v8 \
+  --tag rossmurr4y/rust-builder-base:latest \
+  --file base/debian/Dockerfile \
+  --push .
   
 # crate binary images
 while IFS= read -r LINE; do
