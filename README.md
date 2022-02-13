@@ -19,7 +19,7 @@ The `mdbook` image is setup to be used either in-place of mdbook with all the pl
 ### docker
 
 ```terminal
-❯ docker run -it --volume $(pwd)/docs:/book rossmurr4y/mdbook:0.4.7 --help
+❯ docker run -it --volume $(pwd)/docs:/book rossmurr4y/mdbook:latest --help
 mdbook v0.4.7
 Mathieu David <mathieudavid@mathieudavid.org>
 Creates a book from markdown files
@@ -81,6 +81,7 @@ The following are installed in the `rossmurr4y/mdbook` image (just update your `
 | mdbook-graphviz   | mdbook-graphviz-bin   |   0.0.2  |  0.0.2 |[Link](https://crates.io/crates/mdbook-graphviz)| [Link](https://github.com/dylanowen/mdbook-graphviz) |
 | mdbook-katex      | mdbook-katex-bin      |   0.2.8  |  0.2.8 |[Link](https://crates.io/crates/mdbook-katex)| |
 | mdbook-pdf        | mdbook-pdf-bin        |   0.1.0  |  0.1.0 |[Link](https://github.com/rossmurr4y/mdbook-pdf) | [Link](https://github.com/rossmurr4y/mdbook-pdf) |
+| mdbook-docx | mdbook-docx | 0.1.0 | 0.1.0 |[Link](https://github.com/rossmurr4y/mdbook-docx) | [Link](https://github.com/rossmurr4y/mdbook-pdf) |
 
 ## dependencies
 
