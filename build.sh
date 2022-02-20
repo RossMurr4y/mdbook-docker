@@ -34,4 +34,5 @@ docker buildx build \
   --tag "rossmurr4y/mdbook:$MDBOOK_VER" \
   --tag rossmurr4y/mdbook:latest \
   --file release/debian/Dockerfile \
+  --pull \
   --push .
