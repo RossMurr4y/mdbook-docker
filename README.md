@@ -47,7 +47,7 @@ The source code for mdBook is available at: https://github.com/rust-lang/mdBook
 ### compose
 
 ```yml
-version: '3'
+version: "3"
 services:
   mdbook:
     container_name: mdbook
@@ -61,7 +61,7 @@ services:
     command:
       - serve
       - --hostname
-      - '0.0.0.0'
+      - "0.0.0.0"
 ```
 
 ## mdbook backends (plugins)
@@ -70,25 +70,24 @@ mdbook supports a number of pre- and post- processors.
 
 The following are installed in the `rossmurr4y/mdbook` image (just update your `Book.toml` to use them), or individually through their build container image.
 
-|                   | Image                 | Versions | Latest | Usage Docs                                           | Src      |
-|-------------------|-----------------------|----------|--------|------------------------------------------------------|----------|
-| mdbook            | mdbook-bin            |   0.4.7  |  0.4.7 |[Link](http://rust-lang.github.io/mdBook/index.html) | [Link](https://github.com/rust-lang/mdBook) |
-| mdbook-linkcheck  | mdbook-linkcheck-bin  |   0.7.4  |  0.7.4 |[Link](https://crates.io/crates/mdbook-linkcheck)| [Link](https://github.com/Michael-F-Bryan/mdbook-linkcheck) |
-| mdbook-mermaid    | mdbook-mermaid-bin    |   0.8.0  |  0.8.0 |[Link](https://crates.io/crates/mdbook-mermaid)| [Link](https://github.com/badboy/mdbook-mermaid) |
-| mdbook-toc        | mdbook-toc-bin        |   0.6.1  |  0.6.1 |[Link](https://crates.io/crates/mdbook-toc)| [Link](https://github.com/badboy/mdbook-toc) |
-| mdbook-plantuml   | mdbook-plantuml-bin   |   0.7.0  |  0.7.0 |[Link](https://crates.io/crates/mdbook-plantuml)| [Link](https://github.com/sytsereitsma/mdbook-plantuml) |
-| mdbook-open-on-gh | mdbook-open-on-gh-bin |   2.0.0  |  2.0.0 |[Link](https://crates.io/crates/mdbook-open-on-gh)| [Link](https://github.com/badboy/mdbook-open-on-gh) |
-| mdbook-graphviz   | mdbook-graphviz-bin   |   0.0.2  |  0.0.2 |[Link](https://crates.io/crates/mdbook-graphviz)| [Link](https://github.com/dylanowen/mdbook-graphviz) |
-| mdbook-katex      | mdbook-katex-bin      |   0.2.8  |  0.2.8 |[Link](https://crates.io/crates/mdbook-katex)| |
-| mdbook-pdf        | mdbook-pdf-bin        |   0.1.0  |  0.1.0 |[Link](https://github.com/rossmurr4y/mdbook-pdf) | [Link](https://github.com/rossmurr4y/mdbook-pdf) |
-| mdbook-docx | mdbook-docx | 0.1.0 | 0.1.0 |[Link](https://github.com/rossmurr4y/mdbook-docx) | [Link](https://github.com/rossmurr4y/mdbook-pdf) |
+|                   | Image                 | Versions | Latest | Usage Docs                                           | Src                                                         |
+| ----------------- | --------------------- | -------- | ------ | ---------------------------------------------------- | ----------------------------------------------------------- |
+| mdbook            | mdbook-bin            | 0.4.7    | 0.4.7  | [Link](http://rust-lang.github.io/mdBook/index.html) | [Link](https://github.com/rust-lang/mdBook)                 |
+| mdbook-linkcheck  | mdbook-linkcheck-bin  | 0.7.4    | 0.7.4  | [Link](https://crates.io/crates/mdbook-linkcheck)    | [Link](https://github.com/Michael-F-Bryan/mdbook-linkcheck) |
+| mdbook-mermaid    | mdbook-mermaid-bin    | 0.8.0    | 0.8.0  | [Link](https://crates.io/crates/mdbook-mermaid)      | [Link](https://github.com/badboy/mdbook-mermaid)            |
+| mdbook-toc        | mdbook-toc-bin        | 0.6.1    | 0.6.1  | [Link](https://crates.io/crates/mdbook-toc)          | [Link](https://github.com/badboy/mdbook-toc)                |
+| mdbook-plantuml   | mdbook-plantuml-bin   | 0.7.0    | 0.7.0  | [Link](https://crates.io/crates/mdbook-plantuml)     | [Link](https://github.com/sytsereitsma/mdbook-plantuml)     |
+| mdbook-open-on-gh | mdbook-open-on-gh-bin | 2.0.0    | 2.0.0  | [Link](https://crates.io/crates/mdbook-open-on-gh)   | [Link](https://github.com/badboy/mdbook-open-on-gh)         |
+| mdbook-graphviz   | mdbook-graphviz-bin   | 0.0.2    | 0.0.2  | [Link](https://crates.io/crates/mdbook-graphviz)     | [Link](https://github.com/dylanowen/mdbook-graphviz)        |
+| mdbook-katex      | mdbook-katex-bin      | 0.2.8    | 0.2.8  | [Link](https://crates.io/crates/mdbook-katex)        |                                                             |
+| mdbook-pdf        | mdbook-pdf-bin        | 0.1.0    | 0.1.0  | [Link](https://github.com/rossmurr4y/mdbook-pdf)     | [Link](https://github.com/rossmurr4y/mdbook-pdf)            |
+| mdbook-docx       | mdbook-docx           | 0.1.0    | 0.1.0  | [Link](https://github.com/rossmurr4y/mdbook-docx)    | [Link](https://github.com/rossmurr4y/mdbook-pdf)            |
 
 ## dependencies
 
 Dependencies for each binary are setup within `rossmurr4y/mdbook` image.
 
 Dependencies are not installed within the `<crate>-bin` images.
-
 
 ## image development
 
