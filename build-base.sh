@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # builds a fresh builder-base with the latest deps
 

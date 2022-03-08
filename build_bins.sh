@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # these images are pushed up purely to get the bins
 # they are not intended to be individually used

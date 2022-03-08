@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 docker pull rossmurr4y/mdbook-bin:latest
 docker pull rossmurr4y/mdbook-linkcheck-bin:latest
