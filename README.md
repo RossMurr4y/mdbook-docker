@@ -1,6 +1,12 @@
 # MDBOOK Image Builder
+ | Tags | Description | Recommendation |
+| :--------- | :---------- |
+| `mdbook:<version>`, `mdbook-debian:<version>` | Debian based image containing all extensions and their dependencies. | Suggested for users of the PDF/Docx plugins for mdBook |
+| `mdbook-slim:<version>`, `mdbook-debian-slim:<version>` | Debian based image containing mdBook and any stand-alone plugins. | Recommendation - most users and new projects. Does not contain PDF of Docx plugins or pandoc |
 
 This repository contains the definitions for a number of docker images used for working with `mdbook`.
+
+If you are seeking a slim image without the bloat of pandoc or other extension dependancies, use `rossmurr4y/mdbook-debian-slim`
 
 If you are seeking an image to **use `mdbook` (and any of the plugins below)**, you want `rossmurr4y/mdbook` image.
 

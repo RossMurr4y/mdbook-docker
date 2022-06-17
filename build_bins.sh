@@ -4,8 +4,10 @@ set -euo pipefail
 # these images are pushed up purely to get the bins
 # they are not intended to be individually used
 
-# mdbook=0.4.15
-CRATE_NAME="mdbook" CRATE_VER="0.4.15" bash -c 'docker buildx build --platform linux/amd64,linux/arm64/v8 --build-arg CRATE="$CRATE_NAME" --build-arg VERSION="$CRATE_VER" --tag rossmurr4y/"$CRATE_NAME"-bin:"${CRATE_VER}" --file builder/debian/Dockerfile --push .'
+docker login
+
+# mdbook=0.4.18
+CRATE_NAME="mdbook" CRATE_VER="0.4.18" bash -c 'docker buildx build --platform linux/amd64,linux/arm64/v8 --build-arg CRATE="$CRATE_NAME" --build-arg VERSION="$CRATE_VER" --tag rossmurr4y/"$CRATE_NAME"-bin:"${CRATE_VER}" --file builder/debian/Dockerfile --progress="plain" --push .'
 # mdbook-linkcheck=0.7.6
 CRATE_NAME="mdbook-linkcheck" CRATE_VER="0.7.6" bash -c 'docker buildx build --platform linux/amd64,linux/arm64/v8 --build-arg CRATE="$CRATE_NAME" --build-arg VERSION="$CRATE_VER" --tag rossmurr4y/"$CRATE_NAME"-bin:"${CRATE_VER}" --file builder/debian/Dockerfile --push .'
 # mdbook-mermaid=0.10.0

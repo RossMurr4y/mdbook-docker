@@ -9,14 +9,20 @@ FROM rossmurr4y/mdbook-docx-bin:latest as mdbook-docx
 #FROM rossmurr4y/mdbook-pdf-bin as mdbook-pdf-bin
 #FROM rossmurr4y/mdbook-graphviz-bin as mdbook-graphviz-bin
 
-FROM debian:bullseye-slim as mdbook-pdf
-
+# build a slim image for general usage without any extensions that require dependancies
+FROM debian:bullseye-slim as mdbook-slim
 COPY --from=mdbook-bin /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-linkcheck-bin /usr/local/cargo/bin/bin/mdbook* /usr/bin/
-COPY --from=mdbook-mermaid-bin /usr/local/cargo/bin/mdbook* /usr/bin/
 COPY --from=mdbook-toc-bin /usr/local/cargo/bin/bin/mdbook* /usr/bin/
-COPY --from=mdbook-plantuml-bin /usr/local/cargo/bin/bin/mdbook* /usr/bin/
 COPY --from=mdbook-open-on-gh-bin /usr/local/cargo/bin/bin/mdbook* /usr/bin/
+SHELL ["/bin/bash"]
+WORKDIR /book
+ENTRYPOINT [ "/usr/bin/mdbook" ]
+
+FROM mdbook-slim as mdbook-pdf
+
+COPY --from=mdbook-mermaid-bin /usr/local/cargo/bin/mdbook* /usr/bin/
+COPY --from=mdbook-plantuml-bin /usr/local/cargo/bin/bin/mdbook* /usr/bin/
 COPY --from=mdbook-katex-bin /usr/local/cargo/bin/bin/mdbook* /usr/bin/
 COPY --from=mdbook-docx /usr/bin/mdbook-docx /usr/bin/
 
